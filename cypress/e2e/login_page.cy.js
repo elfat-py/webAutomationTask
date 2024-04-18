@@ -18,5 +18,6 @@ describe('Login page', () =>{
         cy.get('input[name="username"').type('Admin')
         cy.get('input[name="password"]').type('admin123')
         cy.get('.orangehrm-login-button').click()
+
     });
 })
