@@ -47,15 +47,6 @@ describe('Create a System User', () =>{
 
         // Filling the fields name and username
         cy.get('.oxd-input-group:contains("Employee Name") input').type('Joy Smith');
-        //cy.get('.oxd-autocomplete-dropdown').should('exist');
-
-        //cy.get('div[role="listbox"].oxd-autocomplete-dropdown.--position-bottom').should('be.visible');
-        //cy.contains('.oxd-autocomplete-dropdown .--position-bottom').should('be.visible');
-        //cy.contains('.oxd-autocomplete-dropdown.--position-bottom [role="option"]', 'Joy Smith').click();
-
-
-
-
         cy.get('.oxd-input-group:contains("Username") input').type('elfat-py');
 
         //Filling the fields password and confirm password
@@ -64,7 +55,6 @@ describe('Create a System User', () =>{
 
         //SAVING THE NEW USER
         cy.get('button.oxd-button--secondary').contains('Save').click()
-
 
         /*
         TO DO
@@ -77,33 +67,49 @@ describe('Create a System User', () =>{
 
 
     });
-    it('should find the username "elfat"', () => {
-    // Visit the page with the table
 
-    // Find the row where the employee name is "Cynthia Jack"
-    cy.get('.oxd-table-row').contains('Cynthia Jack').parent('.oxd-table-row')
-      .within(() => {
-        // Assert that the username in the adjacent column is "elfat"
-        cy.contains('.header', 'Username').siblings('.data').should('contain', 'elfat')
-      })
+    it('should should navigate to Admin && click on the add button', () => {
+
+        cy.url().should('include', '/web/index.php/admin/viewSystemUsers');
+        cy.get('button.add-button').should('be.visible');
+
+        //cy.get('button.oxd-button--secondary').should('be.visible').click()
+        // cy.get('button.oxd-button.oxd-button--medium.oxd-button--secondary').should('be.visible').click()
+        // cy.url().should('include', '/admin/saveSystemUser');
+        //
+        // // Now you can continue with further actions on the "Add User" page
+        // cy.contains('.orangehrm-main-title', 'Add User').should('be.visible');
+        //cy.get('div.oxd-layout-container').should('be.visible');
+        //cy.get("div.oxd-input.oxd-input--active").type('elfat test ')
+        //cy.contains('button.oxd-button--secondary', 'Add').click()
+
+
+        //cy.url().should('include', '/admin/saveSystemUser')
+        //cy.contains('button.oxd-button--secondary', 'Agregar').click()
     })
-
-
-    it('should type username', () => {
-        cy.url().should('eq', 'https://opensource-demo.orangehrmlive.com/web/index.php/admin/viewSystemUsers');
-        // cy.url().should('include', '/web/index.php/admin/viewSystemUsers');
-        // cy.get('input.oxd-input .oxd-input--active').type('test')
-    });
-
-
-    // it('should should navigate to Admin && click on the add button', () => {
-    //
-    //     cy.url().should('include', '/web/index.php/admin/viewSystemUsers');
-    //     cy.get('button.add-button').should('be.visible');
-    //
+    // it('create a new user of as role: Admin && status: Enabled', () => {
+    //     cy.get('.oxd-select-wrapper .oxd-select-text', { timeout: 10000 }).should('be.visible').click();
+    //     //cy.get('.oxd-select-wrapper .oxd-select-text').click();
     //
     // })
-
+    // it('should be in the add page', () => {
+    //     cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/admin/saveSystemUser');
+    //     cy.contains('.orangehrm-main-title', 'Add User').should('be.visible');
+    //
+    //     cy.get('div.oxd-layout-container').should('be.visible')
+    // })
+    // it('should show the layout container ', () => {
+    //     cy.get('div.oxd-layout-container').should('be.visible')
+    // });
+    // it('should complete the username field', () => {
+    //     cy.get('form.oxd-form').should('be.visible')
+    //     //cy.get('div.oxd-input').type('YourUsername');
+    //     //cy.get('div.xd-autocomplete-text-input--before').should('be.visible').click()
+    // })
+    // it('should fill the form', () => {
+    //     cy.get('div.oxd-input').type('elfat_py');
+    // })
 })
 
 
+//emplyee name : Luis  Please
