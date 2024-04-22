@@ -1,2 +1,2 @@
 # webAutomationTask
-A web automation task assigned by 3i solutions
+A web automation testing task
